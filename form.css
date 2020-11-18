@@ -1,0 +1,95 @@
+body {
+    background-color: #9b59b6;
+    font-family: 'Open Sans', sans-serif;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 50px 400px;
+    color: rgb(7, 7, 7)
+}
+
+.container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2em;
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 400px;
+    max-width: 1170px;
+    left: 100px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    font-stretch: extra-expanded;
+    padding: 0px 0px 20px;
+    text-align: center;
+}
+
+.element {
+    padding-top: 15px;
+}
+
+.element label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    display: flex;
+}
+
+select {
+    /* /* // margin: 10px;   */
+    width: 420px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #f0f0f0;
+    height: 40px;
+    -webkit-appearance: none;
+}
+
+.element input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.input[type=radio] {
+    display: inline;
+}
+
+.element input:focus {
+    outline: 0;
+    border-color: rgb(0, 0, 0);
+}
+
+form small {
+    visibility: hidden;
+}
+
+.element.error input {
+    border-color: red;
+    /* /* border-width: 20px;  */
+}
+
+.element.error small {
+    visibility: visible;
+}
+
+.element.success input {
+    border-color: green;
+}
+
+input[type=submit] {
+    background-color: #9b59b6;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 14px 150px;
+    cursor: pointer;
+}

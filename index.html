@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>responsive form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Application</h1>
+        <div id="form">
+            <form>
+                <div class="element">
+                    <label for="firstName">first Name</label>
+                    <input type="text" id="firstName" placeholder="FirstName" required/>
+                    <small>Error message</small>
+                </div>
+                <div class="element">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="lastName" required/>
+                    <small>Error message</small>
+                </div>
+                <div class="element">
+                    <label for="address">address</label>
+                    <input type="text" id="address" placeholder="address" required/>
+                    <small>Error message</small>
+                </div>
+                <div class="element">
+                    <label for="email">email ID</label>
+                    <input type="email" id="email" placeholder="email" required/>
+                    <small>Error message</small>
+                </div>
+                <div class="element">
+                    <label for="country">Choose a country:</label>
+                    <select name="country" id="country" required>
+                    <option value="" selected="selected">Select country</option>
+                    </select>
+                    <small>Error message</small>
+                </div>
+                <div class="element">
+                    <label for="city">Choose a city:</label>
+                    <select name="city" id="city" required>
+                            <option value="" selected="selected">Select city</option>
+                        </select>
+                    <small>Error message</small>
+                </div>
+                <div class="element">
+                    <label for="mobile">mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="mobile" required/>
+                    <small>Error message</small>
+                </div>
+                <div class="element">
+                    <div class="radio">
+                        <label for="gender" required>gender</label>
+                        <input type="radio" id="male" name="gender" value="male" required/>
+                        <label for="male">Male</label><br />
+                        <input type="radio" id="female" name="gender" value="female" />
+                        <label for="female">Female</label><br />
+                        <input type="radio" id="other" name="gender" value="other" />
+                        <label for="other">Other</label>
+                        <small>Error message</small>
+                    </div>
+                </div>
+                <div class="element">
+                    <label for="dob">Date Of Birth:</label>
+                    <input type="date" id="dob" name="dob" required/>
+                    <small>Error message</small>
+                </div>
+                <label for="submit"></label>
+                <div class="submit">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
