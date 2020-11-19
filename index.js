@@ -58,29 +58,41 @@ function checkfname() {
   let firstname = { name: fname.value };
   if (matchRules(firstname, InvalidFName) === "empty") {
     setErrorfor(fname, "name cannot be empty");
+    return false;
   } else if (matchRules(firstname, InvalidFName) === "length") {
     setErrorfor(fname, "length must be greater than 2");
-  } else setSuccessfor(fname);
+    return false;
+  } else {
+    setSuccessfor(fname);
+    return true;
+  }
 }
 
 function checklname() {
   let lastname = { name: lname.value };
   if (matchRules(lastname, InvalidLName) === "empty") {
     setErrorfor(lname, "name cannot be empty");
+    return false;
   } else if (matchRules(lastname, InvalidLName) === "length") {
     setErrorfor(lname, "length must be greater than 2");
-  } else setSuccessfor(lname);
+    return false;
+  } else {
+    setSuccessfor(lname);
+    return true;
+  }
 }
-
 
 function checkAddress() {
   let addressObj = { add: address.value };
   if (matchRules(addressObj, InvalidLAdd) === "empty") {
     setErrorfor(address, "address cannot be empty");
+    return false;
   } else if (matchRules(addressObj, InvalidLAdd) === "length") {
     setErrorfor(address, "address length is less than 5");
+    return false;
   } else {
     setSuccessfor(address);
+    return true;
   }
 }
 
@@ -89,19 +101,29 @@ function checkemail() {
 
   if (matchRules(emailObj, InvalidEmail) === "empty") {
     setErrorfor(email, "email cannot be empty");
+    return false;
   } else if (matchRules(emailObj, InvalidEmail) === "pattern") {
     setErrorfor(email, "email format is wrong");
-  } else setSuccessfor(email);
+    return false;
+  } else {
+    setSuccessfor(email);
+    return true;
+  }
 }
 
 function checkPhone() {
   let phoneObj = { phone: mobile.value };
 
-  if (matchRules(phoneObj, InvalidPhone) === "empty")
+  if (matchRules(phoneObj, InvalidPhone) === "empty") {
     setErrorfor(mobile, "mobile number is required");
-  else if (matchRules(phoneObj, InvalidPhone) === "size")
+    return false;
+  } else if (matchRules(phoneObj, InvalidPhone) === "size") {
     setErrorfor(mobile, "mobile number should be of 10 digits");
-  else setSuccessfor(mobile);
+    return false;
+  } else {
+    setSuccessfor(mobile);
+    return true;
+  }
 }
 fname.onblur = checkfname;
 lname.onblur = checklname;
@@ -109,3 +131,22 @@ address.onblur = checkAddress;
 email.onblur = checkemail;
 mobile.onblur = checkPhone;
 window.onload = load();
+let submit = (document.getElementById("application").onsubmit = function(
+  event
+) {
+  checkfields(event);
+});
+function checkfields(event) {
+  if (
+    checkfname() &&
+    checklname() &&
+    checkAddress() &&
+    checkPhone() &&
+    checkemail()
+  )
+    alert("form submitted successfully");
+  else {
+    alert("details are not complete");
+    event.preventDefault();
+  }
+}
